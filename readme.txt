@@ -1,0 +1,6 @@
+CONTENTS OF THIS PROJECT
+PAUL-WILLIAM CREPIN - MARGUIER TIMOTHEE
+---------------------
+   
+ * main_bdd
+ 
