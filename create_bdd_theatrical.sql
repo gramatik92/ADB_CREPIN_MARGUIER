@@ -65,6 +65,7 @@ CREATE TABLE Produces_cost(
 -------------------------------------------------------------
 
 CREATE TABLE Theater(
+  -- On aurait pu identifier nos théatres avec des lettres mais pour etre plus simple on utilise des chiffres
         Theater_id       number (10) primary key ,
         company_id       number (10),
         fixed_capacity   number (10),
