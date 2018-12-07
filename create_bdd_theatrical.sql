@@ -32,6 +32,7 @@ CREATE TABLE Network
 -------------------------------------------------------------
 
 CREATE TABLE Company(
+  -- On identifie la company par un numéro, on aurait pu l'identifier par une lettre "varchar"
         company_id  number(10) primary key ,
         network_id  number(10),
         productions Varchar (50),
@@ -54,7 +55,7 @@ CREATE TABLE Shows (
 CREATE TABLE Produces_cost(
         company_id      number (10),
         show_id         number (10),
-        production_cost number (10)
+        production_cost number (10),
         foreign key(company_id) REFERENCES Company(company_id),
         foreign key(show_id) references Shows(show_id)
 );
