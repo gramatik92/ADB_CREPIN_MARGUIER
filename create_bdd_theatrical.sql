@@ -18,6 +18,7 @@ DROP TABLE Host CASCADE CONSTRAINTS;
 
 ------------------------------------------------------------
 --       Création des tables de la bd theatrical
+-- Dans un premier temps, nous avons utilisé du mysql et nous avons adaté notre code en PLsql
 ------------------------------------------------------------
 -- Table: Network
 ------------------------------------------------------------
@@ -37,14 +38,14 @@ CREATE TABLE Company(
         room        Varchar (50),
         budget      number (10)
         foreign key(network_id) references Networks(network_id)
-)ENGINE=InnoDB;
+);
 
 -------------------------------------------------------------
 -- Table: Shows
 -------------------------------------------------------------
 CREATE TABLE Shows (
     show_id number(10) primary key
-)ENGINE=InnoDB;
+);
 
 -------------------------------------------------------------
 -- Table: Produces_cost
@@ -56,7 +57,7 @@ CREATE TABLE Produces_cost(
         production_cost number (10)
         foreign key(company_id) REFERENCES Company(company_id),
         foreign key(show_id) references Shows(show_id)
-)ENGINE=InnoDB;
+);
 
 ------------------------------------------------------------
 -- Table: Theater
@@ -69,47 +70,47 @@ CREATE TABLE Theater(
         performence_hall Varchar (10),
         balance          number (10),
         foreign key (company_id) references Company(company_id)
-)ENGINE=InnoDB;
+);
 
 
-#------------------------------------------------------------
-# Table: Ticket
-#------------------------------------------------------------
+-------------------------------------------------------------
+-- Table: Ticket
+-------------------------------------------------------------
 
 CREATE TABLE Ticket(
-        ticket_id              Int Auto_increment  NOT NULL primary key,
-        theater_id             Int(10) NOT NULL ,
-        show_id                Int(10) NOT NULL ,
-        reduced_reference_rate Varchar (50) NOT NULL ,
-        price                  Int NOT NULL
-)ENGINE=InnoDB;
+        ticket_id              number(10) primary key,
+        theater_id             number(10),
+        show_id                number(10),
+        reduced_reference_rate number(10),
+        price                  number(10)
+);
 
 
-#------------------------------------------------------------
-# Table: Representation
-#------------------------------------------------------------
+-------------------------------------------------------------
+-- Table: Representation
+-------------------------------------------------------------
 
 CREATE TABLE Representation(
-        theater_id          Int(10) NOT NULL ,
-        ticket_id           Int(10) NOT NULL ,
-        show_id             Int(10) NOT NULL ,
-        representation_cost Int(10) NOT NULL ,
-        travel__cost        Int(10) NOT NULL ,
-        dates               DATE NOT NULL
-)ENGINE=InnoDB;
+        theater_id          number(10),
+        ticket_id           number(10),
+        show_id             number(10),
+        representation_cost number(10),
+        travel__cost        number(10),
+        dates               number(10)
+);
 
 
-#------------------------------------------------------------
-# Table: Grants
-#------------------------------------------------------------
+-------------------------------------------------------------
+-- Table: Grants
+-------------------------------------------------------------
 
 CREATE TABLE Grants(
-        grant_id   Int  Auto_increment  NOT NULL primary key ,
-        theater_id Int(10) NOT NULL ,
-        agency     Int(10) NOT NULL ,
-        duration   Int(10) NOT NULL ,
-        amount     Int(10) NOT NULL
-)ENGINE=InnoDB;
+        grant_id   number(10) primary key ,
+        theater_id number(10),
+        agency     number(10),
+        duration   number(10),
+        amount     number(10),
+);
 
 
 -------------------------------------------------------------
@@ -120,15 +121,17 @@ CREATE TABLE Host(
         theater_id   number (10),
         show_id      number (10),
         global_price number (10),
-        dates        Date,
+        -- comme donnée dans l'énoncé on définis la date comme un "int"
+        dates        number(10),
+        -- on défini nos clés étrangères en relation avec nos théatres et nos shows
         foreign key (theater_id) references Theater(theater_id),
         foreign key (show_id) references Shows(show_id)
-)ENGINE=InnoDB;
+);
 -------------------------------------------------------------
 -- Table: Dates of show
 -------------------------------------------------------------
 
 create table Dates
 (
-    dates number(7) primary key
-)ENGINE=InnoDB;
+    dates number(10) primary key
+);
