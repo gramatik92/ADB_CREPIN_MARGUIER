@@ -76,21 +76,25 @@ INSERT INTO Ticket (ticket_id, theater_id, show_id, reference_rate, price) value
 INSERT INTO Ticket (ticket_id, theater_id, show_id, reference_rate, price) values (2,2,23,'secondref',100);
 INSERT INTO Ticket (ticket_id, theater_id, show_id, reference_rate, price) values (3,3,21,'thirdref',90);
 
-  PROMPT
-  pause Tapez sur Enter...
-  PROMPT
+--------------------------------------------------------------
+-- Par la suite nous allons aborder la table des représentations
+--------------------------------------------------------------
 
-  insert into Represented (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (1,1,1,100,100, 5);
-  insert into Represented (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (2,2,2,100,100, 5);
-  insert into Represented (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (3,3,3,100,100, 5);
+INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (1,1,21,150,100, 1);
+INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (2,2,23,150,100, 2);
+INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (3,3,23,150,100, 3);
 
-  PROMPT
-  pause Tapez sur Enter...
-  PROMPT
+--------------------------------------------------------------
+--- Grant management
+--- An important part of the budget comes from grants accorded to theaters. The subsidies are granted by agencies
+-- Nous avons des dons de différentes entreprises, Municipality, private donors
+-- Pour la duration nous allons mettre 50 qui correspondrait à 50 représentations
+--------------------------------------------------------------
 
-  insert into Grants (grant_id, theater_id, durations, agency, amount) values (1,1,60,'toto',100);
-  insert into Grants (grant_id, theater_id, durations, agency, amount) values (2,2,60,'tota',100);
-  insert into Grants (grant_id, theater_id, durations, agency, amount) values (3,3,60,'totz',100);
+INSERT INTO Grants (grant_id, theater_id, durations, agency, amount) values (1,19,50,'Municipality',100000);
+INSERT INTO Grants (grant_id, theater_id, durations, agency, amount) values (2,21,50,'Ministry of Culture',200000);
+INSERT INTO Grants (grant_id, theater_id, durations, agency, amount) values (3,19,50,'private donors',15000);
+INSERT INTO Grants (grant_id, theater_id, durations, agency, amount) values (4,21,50,'Entreprises',23000);
 
 
 -------------------------------------------------------------
