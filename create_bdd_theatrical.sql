@@ -37,7 +37,7 @@ CREATE TABLE Company(
         productions Varchar (50),
         room        Varchar (50),
         budget      number (10)
-        foreign key(network_id) references Networks(network_id)
+        foreign key(network_id) references Network(network_id)
 );
 
 -------------------------------------------------------------
@@ -96,7 +96,12 @@ CREATE TABLE Representation(
         show_id             number(10),
         representation_cost number(10),
         travel__cost        number(10),
-        dates               number(10)
+        dates               number(10),
+        --- les représentations sont liés à différents élements
+        foreign key (ticket_id) references Ticket(ticket_id),
+        foreign key (theater_id) references Theater(theater_id),
+        foreign key (show_id) references Shows(show_id),
+        foreign key (dates) references Dates(dates)
 );
 
 
@@ -110,6 +115,7 @@ CREATE TABLE Grants(
         agency     number(10),
         duration   number(10),
         amount     number(10),
+        foreign key(theater_id) references Theater(theater_id)
 );
 
 
@@ -131,7 +137,11 @@ CREATE TABLE Host(
 -- Table: Dates of show
 -------------------------------------------------------------
 
-create table Dates
+CREATE TABLE Dates
 (
     dates number(10) primary key
 );
+
+-------------------------------------------------------------
+-- Création de nos tables finis, maintenant il faut crée des inserts afin de les exploiter.
+-------------------------------------------------------------
