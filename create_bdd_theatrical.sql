@@ -1,5 +1,5 @@
 -----------------------------------------------------------
---        Script MySQL - Advanced Database
+--        Script - Advanced Database
 --  Made by Paul William CREPIN and Timothée Marguier
 -------------------------------------------------------------
 
@@ -154,10 +154,10 @@ CREATE TABLE Dates
 
 create table Customers
 (
-  customer_id    int(10) primary key,
+  customer_id    number(10) primary key,
   customer_name  varchar(100),
-  customer_age   int(10),
-  customer_phone int
+  customer_age   number(10),
+  customer_phone number(100)
 );
 
 -------------------------------------------------------------

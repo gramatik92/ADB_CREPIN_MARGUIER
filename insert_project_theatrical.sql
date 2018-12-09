@@ -15,7 +15,7 @@
 INSERT INTO Network (Network_id) values (19);
 INSERT INTO Network (Network_id) values (21);
 INSERT INTO Network (Network_id) values (12);
-INSERT INTO Network (Network_id) values (62);
+INSERT INTO Network (Network_id) values (62); 
 
 -------------------------------------------------------------
 -- Insertion de d'une company qui appartient à un network avec la salle, la production et le budjet
