@@ -19,5 +19,5 @@ Testes des fichiers
 - Create OK
 - Insert OK
 - Create Queries OK
-- Insert .
+- Triggers .
 _____________________
