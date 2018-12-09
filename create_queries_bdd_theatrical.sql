@@ -7,41 +7,46 @@
 --- Dans ce script sql nous allons créer des queries
 -------------------------------------------------------------
 -- Network table
-select * from Network;
+SELECT * from Network;
 
 -- Company table
-select * from Company;
+SELECT * from Company;
 
 -- Produces_cost table
-select * from Produces_cost;
+SELECT * from Produces_cost;
 
 -- Shows table
-select * from Shows;
+SELECT * from Shows;
 
 -- Theater table
-select * from Theater;
+SELECT * from Theater;
 
 -- Ticket table
-select * from Ticket;
+SELECT * from Ticket;
 
 --- Representation table
-select * from Representation;
+SELECT * from Representation;
 
 --- Grants table
-select * from Grants;
+SELECT * from Grants;
 
 --- Host table
-select * from Host;
+SELECT * from Host;
 
 --- Customers table
-select * from Customers;
+SELECT * from Customers;
 
 -- Attributes of company table --
 asc Network;
 
+-- Select les donnateurs qui donne 100000 aux theatres.
+SELECT *
+FROM Grants g
+WHERE g.amount>=100000;
 
--- Global price of the show with the id=3 hosted by the theater with the id=3 --
--- The payment is made to the company which produced the show the day of the first presentation in the corresponding theater. --
-select *
-from hosts h
-where h.show_id=3 and h.theater_id=3;
+-- Selectionner tous les hall qui ont comme nom : delta hall;
+SELECT performance_hall
+FROM Theater
+WHERE performance_hall = 'Delta Hall';
+
+-- Toutes nos requêtes fonctionnes 
