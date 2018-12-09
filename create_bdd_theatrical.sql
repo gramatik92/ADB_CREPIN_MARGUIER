@@ -5,16 +5,18 @@
 
 -------------------------------------------------------------
 -- Table: SUPPRESSION des tables déjà existante!
+-- Nous allons créer 8 tables
 -------------------------------------------------------------
-DROP TABLE Network CASCADE CONSTRAINTS;
-DROP TABLE Company CASCADE CONSTRAINTS;
-DROP TABLE Produces_cost CASCADE CONSTRAINTS;
-DROP TABLE Shows CASCADE CONSTRAINTS;
-DROP TABLE Theater CASCADE CONSTRAINTS;
-DROP TABLE Ticket CASCADE CONSTRAINTS;
-DROP TABLE Representation CASCADE CONSTRAINTS;
-DROP TABLE Grants CASCADE CONSTRAINTS;
-DROP TABLE Host CASCADE CONSTRAINTS;
+DROP TABLE Network;
+DROP TABLE Company;
+DROP TABLE Produces_cost;
+DROP TABLE Shows;
+DROP TABLE Theater;
+DROP TABLE Ticket;
+DROP TABLE Representation;
+DROP TABLE Grants;
+DROP TABLE Host;
+DROP TABLE Customers;
 
 ------------------------------------------------------------
 --       Création des tables de la bd theatrical
@@ -84,7 +86,9 @@ CREATE TABLE Ticket(
         theater_id             number(10),
         show_id                number(10),
         reduced_reference_rate number(10),
-        price                  number(10)
+        price                  number(10),
+        foreign key (customer_id) references Customers(customer_id)
+
 );
 
 
@@ -142,6 +146,20 @@ CREATE TABLE Host(
 CREATE TABLE Dates
 (
     dates number(10) primary key
+);
+
+-------------------------------------------------------------
+-- Table: Dates of customers, Le customer possède
+-------------------------------------------------------------
+
+create table Customers
+(
+  customer_id    int(10) primary key,
+  customer_name  varchar(100),
+  customer_age   int(10),
+  customer_phone int,
+  primary key (customer_id),
+  constraint chk_Customers check (customer_age>=5 AND customer_age<=120)
 );
 
 -------------------------------------------------------------
