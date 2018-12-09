@@ -69,6 +69,15 @@ INSERT INTO Hosts (theater_id, show_id, global_price, dates) values (3,21,100,3)
 INSERT INTO Hosts (theater_id, show_id, global_price, dates) values (3,23,180,4);
 
 --------------------------------------------------------------
+-- Par la suite nous allons aborder la table des customers(clients)
+--------------------------------------------------------------
+
+INSERT INTO  Customers (customer_id, customer_name, customer_age, customer_phone) values (1,"Jean",21,000101010);
+INSERT INTO  Customers (customer_id, customer_name, customer_age, customer_phone) values (2,"James",22,000101010);
+INSERT INTO  Customers (customer_id, customer_name, customer_age, customer_phone) values (3,"Camille",20,000101010);
+INSERT INTO  Customers (customer_id, customer_name, customer_age, customer_phone) values (4,"Nicole",12,000101010);
+
+--------------------------------------------------------------
 ---- Nous allons créer un ticket en fonction du theatre, le show, le type de référence (avantage ... ) et le prix final.
 --------------------------------------------------------------
 
@@ -94,7 +103,6 @@ INSERT INTO Grants (grant_id, theater_id, durations, agency, amount) values (4,2
 INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (1,1,21,150,100, 1);
 INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (2,2,23,150,100, 2);
 INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (3,3,23,150,100, 3);
-
 
 -------------------------------------------------------------
 --  Après avoir remplie nos tables, nous allons ajouter les contraintes grâce aux triggers

@@ -149,7 +149,7 @@ CREATE TABLE Dates
 );
 
 -------------------------------------------------------------
--- Table: Dates of customers, Le customer possède
+-- Table: Dates of customers, Le customer possède un identifiant, un nom, un age, un numéro.
 -------------------------------------------------------------
 
 create table Customers
@@ -157,9 +157,7 @@ create table Customers
   customer_id    int(10) primary key,
   customer_name  varchar(100),
   customer_age   int(10),
-  customer_phone int,
-  primary key (customer_id),
-  constraint chk_Customers check (customer_age>=5 AND customer_age<=120)
+  customer_phone int
 );
 
 -------------------------------------------------------------
