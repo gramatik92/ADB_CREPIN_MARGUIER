@@ -168,7 +168,8 @@ create table Customers
   customer_id    number(10) primary key,
   customer_name  varchar(100),
   customer_age   number(10),
-  customer_phone number(20)
+  customer_phone number(20),
+  custome_status varchar(100)
 );
 
 -------------------------------------------------------------

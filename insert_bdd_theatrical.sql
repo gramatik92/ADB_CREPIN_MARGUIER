@@ -1,5 +1,5 @@
 -----------------------------------------------------------
---        Script MySQL - Advanced Database
+--        Script - Advanced Database
 --  Made by Paul William CREPIN and Timothée Marguier
 -------------------------------------------------------------
 
@@ -72,10 +72,10 @@ INSERT INTO Host (theater_id, show_id, global_price, dates) values (3,23,180,4);
 -- Par la suite nous allons aborder la table des customers(clients)
 --------------------------------------------------------------
 
-INSERT INTO Customers (customer_id, customer_name, customer_age, customer_phone) values (1,"Jean",21,000101010);
-INSERT INTO Customers (customer_id, customer_name, customer_age, customer_phone) values (2,"James",22,000101010);
-INSERT INTO Customers (customer_id, customer_name, customer_age, customer_phone) values (3,"Camille",20,000101010);
-INSERT INTO Customers (customer_id, customer_name, customer_age, customer_phone) values (4,"Nicole",12,000101010);
+INSERT INTO Customers (customer_id, customer_name, customer_age, customer_phone, custome_status) values (1,"Jean",21,000101010,'student');
+INSERT INTO Customers (customer_id, customer_name, customer_age, customer_phone, custome_status) values (2,"James",22,000101010,'student');
+INSERT INTO Customers (customer_id, customer_name, customer_age, customer_phone, custome_status) values (3,"Camille",20,000101010,'student');
+INSERT INTO Customers (customer_id, customer_name, customer_age, customer_phone, custome_status) values (4,"Nicole",12,000101010,'student');
 
 --------------------------------------------------------------
 ---- Nous allons créer un ticket en fonction du theatre, le show, le type de référence (avantage ... ) et le prix final.
