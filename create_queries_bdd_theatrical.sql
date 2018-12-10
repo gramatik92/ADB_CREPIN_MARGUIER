@@ -25,7 +25,7 @@ SELECT * from Theater;
 SELECT * from Ticket;
 
 --- Representation table
-SELECT * from Representation;
+SELECT * from Representation_costs;
 
 --- Grants table
 SELECT * from Grants;
@@ -49,4 +49,4 @@ SELECT performance_hall
 FROM Theater
 WHERE performance_hall = 'Delta Hall';
 
--- Toutes nos requêtes fonctionnes 
+-- Toutes nos requêtes fonctionnes.
