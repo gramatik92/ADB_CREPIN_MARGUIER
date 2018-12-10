@@ -104,6 +104,12 @@ INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_cost
 INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (2,2,23,150,100, 2);
 INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (3,3,23,150,100, 3);
 
+--------------------------------------------------------------
+-- Tables des sieges en fonction des tickets.
+--------------------------------------------------------------
+INSERT INTO All_performance_seats (theater_id, row_number, seat_number, dates, ticket_id) values (1,12,100,1,1);
+INSERT INTO All_performance_seats (theater_id, row_number, seat_number, dates, ticket_id) values (2,13,100,1,1);
+INSERT INTO All_performance_seats (theater_id, row_number, seat_number, dates, ticket_id) values (1,12,100,1,1);
 -------------------------------------------------------------
 --  Après avoir remplie nos tables, nous allons ajouter les contraintes grâce aux triggers
 -------------------------------------------------------------

@@ -17,6 +17,7 @@ DROP TABLE Representation;
 DROP TABLE Grants;
 DROP TABLE Host;
 DROP TABLE Customers;
+DROP TABLE All_performance_seats;
 
 ------------------------------------------------------------
 --       Création des tables de la bd theatrical
@@ -171,16 +172,17 @@ create table Customers
 );
 
 -------------------------------------------------------------
--- Table: All performance seats, Le customer possède un identifiant, un nom, un age, un numéro.
+-- Table: All performance seats, table supplémentaire
 -------------------------------------------------------------
 create table All_performance_seats
 (
-  theater_id       int  not null,
-  row_number       int  not null,
-  seat_number      int  not null,
-  performance_date date not null,
-  booking_id       int  not null,
-  primary key (theater_id, row_number, seat_number, performance_date)
+  theater_id       number(10) primary key,
+  row_number       number(10),
+  seat_number      number(10),
+  dates            number(10),
+  ticket_id        number(10),
+  foreign key (dates) references Dates(dates),
+  foreign key (ticket_id) references Ticket(ticket_id)
 );
 
 -------------------------------------------------------------
