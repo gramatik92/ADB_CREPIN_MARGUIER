@@ -102,7 +102,7 @@ CREATE TABLE Ticket
 -- Ce serait égale à la facture total de la representation
 -------------------------------------------------------------
 
-CREATE TABLE Representation_costs
+CREATE TABLE Representation
 (
     theater_id          number(10),
     ticket_id           number(10),

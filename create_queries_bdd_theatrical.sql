@@ -25,7 +25,7 @@ SELECT * from Theater;
 SELECT * from Ticket;
 
 --- Representation table
-SELECT * from Representation_costs;
+SELECT * from Representation;
 
 --- Grants table
 SELECT * from Grants;
