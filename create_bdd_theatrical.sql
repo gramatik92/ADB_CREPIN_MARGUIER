@@ -98,8 +98,8 @@ CREATE TABLE Ticket
 
 
 -------------------------------------------------------------
--- Table: Representation possède un cout / donc
--- Ce serait égale à la facture total de la representation
+-- Table: Representation possède un cout de déplacement
+-- Ce serait égale total de la representation en fonction du théatre , des dates...
 -------------------------------------------------------------
 
 CREATE TABLE Representation
