@@ -68,10 +68,10 @@ CREATE TABLE Produces_cost
 ------------------------------------------------------------
 -- Table: Theater
 -------------------------------------------------------------
+  -- On aurait pu identifier nos théatres avec des lettres mais pour etre plus simple on utilise des chiffres
 
 CREATE TABLE Theater
 (
-  -- On aurait pu identifier nos théatres avec des lettres mais pour etre plus simple on utilise des chiffres
     Theater_id       number (10) primary key ,
     company_id       number (10),
     fixed_capacity   number (10),
@@ -159,7 +159,7 @@ CREATE TABLE Dates
 );
 
 -------------------------------------------------------------
--- Table: Dates of customers, Le customer possède un identifiant, un nom, un age, un numéro.
+-- Table: customers, Le customer possède un identifiant, un nom, un age, un numéro.
 -------------------------------------------------------------
 
 create table Customers
@@ -168,6 +168,19 @@ create table Customers
   customer_name  varchar(100),
   customer_age   number(10),
   customer_phone number(20)
+);
+
+-------------------------------------------------------------
+-- Table: All performance seats, Le customer possède un identifiant, un nom, un age, un numéro.
+-------------------------------------------------------------
+create table All_performance_seats
+(
+  theater_id       int  not null,
+  row_number       int  not null,
+  seat_number      int  not null,
+  performance_date date not null,
+  booking_id       int  not null,
+  primary key (theater_id, row_number, seat_number, performance_date)
 );
 
 -------------------------------------------------------------
