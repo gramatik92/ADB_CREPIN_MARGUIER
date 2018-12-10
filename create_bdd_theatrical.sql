@@ -39,8 +39,8 @@ CREATE TABLE Company
     company_id  number(10) primary key ,
     network_id  number(10),
     productions Varchar (50),
+    budget      number (10),
     room        Varchar (50),
-    budget      number (10)
     foreign key(network_id) references Network(network_id)
 );
 
@@ -108,12 +108,13 @@ CREATE TABLE Representation
     ticket_id           number(10),
     show_id             number(10),
     representation_cost number(10),
+    dates               number(10),
     travel__cost        number(10),
     dates               number(10),
     --- les représentations sont liés à différents élements
     foreign key (ticket_id) references Ticket(ticket_id),
-    foreign key (theater_id) references Theater(theater_id),
     foreign key (show_id) references Shows(show_id),
+    foreign key (theater_id) references Theater(theater_id),
     foreign key (dates) references Dates(dates)
 );
 
@@ -127,8 +128,8 @@ CREATE TABLE Grants
     grant_id   number(10) primary key ,
     theater_id number(10),
     agency     number(10),
-    duration   number(10),
     amount     number(10),
+    duration   number(10),
     foreign key(theater_id) references Theater(theater_id)
 );
 
@@ -166,7 +167,7 @@ create table Customers
   customer_id    number(10) primary key,
   customer_name  varchar(100),
   customer_age   number(10),
-  customer_phone number(100)
+  customer_phone number(20)
 );
 
 -------------------------------------------------------------
