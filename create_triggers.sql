@@ -1,3 +1,8 @@
+DROP TRIGGER travel_cost;
+DROP TRIGGER ticket_cost;
+DROP TRIGGER booking_username;
+
+
 CREATE TRIGGER travel_cost
 BEFORE UPDATE on Representation -- avant mise à jour
   FOR EACH ROW  -- pour chaque ligne
@@ -18,6 +23,49 @@ Begin
   end if;
 End ;
 /
+------------------------------------------
+-- selectionner un siège si il est disponible ou non
+------------------------------------------
+CREATE TRIGGER ticket_cost
+BEFORE CREATE on Ticket
 
-CREATE TRIGGER age
-BEFORE
+Declare
+seat boolean;
+Begin
+ where exists (
+  select seat_number INTO seat FROM All_performance_seats
+   then 1
+    else 0
+    end  into result
+  from dual;
+
+   if result = 1
+     then
+       DBMS_OUTPUT.put_line('SEAT AVAILABLE');
+     else
+       DBMS_OUTPUT.put_line('SEAT ALREADY TAKEN');
+     end if;
+------------------------------------------
+-- Ajout d'un utilisateur la table
+------------------------------------------
+CREATE TRIGGER booking_username
+AFTER INSERT
+    ON Customers
+    FOR EACH ROW
+
+DECLARE
+        v_username varchar2(10);
+     BEGIN
+
+        -- Find username of person performing INSERT into table
+        SELECT user INTO v_username
+        FROM dual;
+
+        -- Update create_date field to current system date
+        :new.create_date := date;
+
+        -- Update created_by field to the username of the person performing the INSERT
+        :new.created_by := v_username;
+
+     END;
+/
