@@ -7,7 +7,7 @@
 --- Dans ce script sql nous allons créer des queries
 -------------------------------------------------------------
 -- Network table
-SELECT * from Network;
+SELECT * from Networks;
 
 -- Company table
 SELECT * from Company;
@@ -31,7 +31,7 @@ SELECT * from Representation;
 SELECT * from Grants;
 
 --- Host table
-SELECT * from Host;
+SELECT * from Hosts;
 
 --- Customers table
 SELECT * from Customers;

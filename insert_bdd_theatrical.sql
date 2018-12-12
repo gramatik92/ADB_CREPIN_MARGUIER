@@ -12,10 +12,10 @@
 -------------------------------------------------------------
 -- Création de networks
 -------------------------------------------------------------
-INSERT INTO Network (Network_id) values (19);
-INSERT INTO Network (Network_id) values (21);
-INSERT INTO Network (Network_id) values (12);
-INSERT INTO Network (Network_id) values (62);
+INSERT INTO networks (Network_id) values (19);
+INSERT INTO Networks (Network_id) values (21);
+INSERT INTO networks (Network_id) values (12);
+INSERT INTO Networks (Network_id) values (62);
 
 -------------------------------------------------------------
 -- Insertion de d'une company qui appartient à un network avec la salle, la production et le budjet
@@ -63,10 +63,10 @@ INSERT INTO Theater (theater_id,company_id,performance_hall,fixed_capacity,balan
 -------------------------------------------------------------
 -- Ajouts de nos hosts par rapport à nos theatre, show prix et dates
 -------------------------------------------------------------
-INSERT INTO Host (theater_id, show_id, global_price, dates) values (1,21,150,1);
-INSERT INTO Host (theater_id, show_id, global_price, dates) values (2,23,155,2);
-INSERT INTO Host (theater_id, show_id, global_price, dates) values (3,21,100,3);
-INSERT INTO Host (theater_id, show_id, global_price, dates) values (3,23,180,4);
+INSERT INTO Hosts (theater_id, show_id, global_price, dates) values (1,21,150,1);
+INSERT INTO Hosts (theater_id, show_id, global_price, dates) values (2,23,155,2);
+INSERT INTO Hosts (theater_id, show_id, global_price, dates) values (3,21,100,3);
+INSERT INTO Hosts (theater_id, show_id, global_price, dates) values (3,23,180,4);
 
 --------------------------------------------------------------
 -- Par la suite nous allons aborder la table des customers(clients)
@@ -107,9 +107,9 @@ INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_cost
 --------------------------------------------------------------
 -- Tables des sieges en fonction des tickets.
 --------------------------------------------------------------
-INSERT INTO All_performance_seats (theater_id, row_number, seat_number, dates, ticket_id) values (1,12,100,1,1);
-INSERT INTO All_performance_seats (theater_id, row_number, seat_number, dates, ticket_id) values (2,13,100,1,1);
-INSERT INTO All_performance_seats (theater_id, row_number, seat_number, dates, ticket_id) values (1,12,100,1,1);
+INSERT INTO Performance_seat (theater_id, row_number, seat_number, dates, ticket_id) values (1,12,100,1,1);
+INSERT INTO Performance_seat (theater_id, row_number, seat_number, dates, ticket_id) values (2,13,100,1,1);
+INSERT INTO Performance_seat (theater_id, row_number, seat_number, dates, ticket_id) values (1,12,100,1,1);
 -------------------------------------------------------------
 --  Après avoir remplie nos tables, nous allons ajouter les contraintes grâce aux triggers
 -------------------------------------------------------------
