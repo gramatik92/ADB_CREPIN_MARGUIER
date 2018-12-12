@@ -12,10 +12,10 @@
 -------------------------------------------------------------
 -- Création de networks
 -------------------------------------------------------------
-INSERT INTO networks (Network_id) values (19);
-INSERT INTO Networks (Network_id) values (21);
-INSERT INTO networks (Network_id) values (12);
-INSERT INTO Networks (Network_id) values (62);
+INSERT INTO networks (network_id) values (19);
+INSERT INTO Networks (network_id) values (21);
+INSERT INTO networks (network_id) values (12);
+INSERT INTO Networks (network_id) values (62);
 
 -------------------------------------------------------------
 -- Insertion de d'une company qui appartient à un network avec la salle, la production et le budjet
@@ -100,9 +100,9 @@ INSERT INTO Grants (grant_id, theater_id, durations, agency, amount) values (4,2
 -- Par la suite nous allons aborder la table des représentations
 --------------------------------------------------------------
 
-INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (1,1,21,150,100, 1);
-INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (2,2,23,150,100, 2);
-INSERT INTO  Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (3,3,23,150,100, 3);
+INSERT INTO Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (1,1,21,150,100, 1);
+INSERT INTO Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (2,2,23,150,100, 2);
+INSERT INTO Representation (theater_id, ticket_id, show_id, representation_costs, travel_costs, dates) values (3,3,23,150,100, 3);
 
 --------------------------------------------------------------
 -- Tables des sieges en fonction des tickets.
