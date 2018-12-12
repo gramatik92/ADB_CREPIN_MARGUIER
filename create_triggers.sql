@@ -72,7 +72,7 @@ DECLARE
 
 ---------------------------------------
 
-create trigger chk_reference_rate
+create trigger discount_check
 before insert on Ticket
 for each row
 begin

@@ -17,7 +17,7 @@ DROP TABLE Representation;
 DROP TABLE Grants;
 DROP TABLE Hosts;
 DROP TABLE Customers;
-DROP TABLE All_performance_seats;
+DROP TABLE Performance_seat;
 
 ------------------------------------------------------------
 --       Création des tables de la bd theatrical
@@ -42,7 +42,7 @@ CREATE TABLE Company
     productions varchar2 (50),
     budget      number (10),
     room        varchar2 (50),
-    foreign key(network_id) references Network(network_id)
+    foreign key(network_id) references Networks(network_id)
 );
 
 -------------------------------------------------------------
@@ -112,7 +112,7 @@ CREATE TABLE Representation
     show_id             number(10),
     representation_cost number(10),
     dates               number(10),
-    travel__cost        number(10),
+    travel_cost        number(10),
     --- les représentations sont liés à différents élements
     foreign key (ticket_id) references Ticket(ticket_id),
     foreign key (show_id) references Shows(show_id),
@@ -179,7 +179,8 @@ create table Customers
 -------------------------------------------------------------
 create table Performance_seat
 (
-  theater_id       number(10) primary key,
+  Performance_seat number(10) primary key,
+  theater_id       number(10),
   row_number       number(10),
   seat_number      number(10),
   dates            number(10),
