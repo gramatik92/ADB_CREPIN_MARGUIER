@@ -69,3 +69,15 @@ DECLARE
 
      END;
 /
+
+---------------------------------------
+
+create trigger chk_reference_rate
+before insert on Ticket
+for each row
+begin
+    if ((:new.reference_rate!='normal') or  (:new.reference_rate!='reduced')) then
+        dbms_output.put_line('ERROR');
+    end if;
+end;
+/
