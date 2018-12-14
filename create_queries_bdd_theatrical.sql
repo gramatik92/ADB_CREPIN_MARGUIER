@@ -37,7 +37,7 @@ SELECT * from Hosts;
 SELECT * from Customers;
 
 -- Attributes of company table --
-asc Network;
+DESC Network;
 
 -- Select les donnateurs qui donne 100000 aux theatres.
 SELECT *
