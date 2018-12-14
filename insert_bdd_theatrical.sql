@@ -54,10 +54,10 @@ INSERT INTO Dates_dates(dates) VALUES (4);
 -- Ajouts de donnnées dans notre théatre, ces caractéristiques et quelle company va l'utiliser
 -- Pour faire simple nous utilisons des numéros allant de 1 à 4 pour nos theatres ID
 -------------------------------------------------------------
-INSERT INTO Theater (theater_id,company_id,performance_hall,fixed_capacity,balance) VALUES (1,19,'Alpha Hall',1000,100);
-INSERT INTO Theater (theater_id,company_id,performance_hall,fixed_capacity,balance) VALUES (2,21,'Beta Hall',1500,100);
-INSERT INTO Theater (theater_id,company_id,performance_hall,fixed_capacity,balance) VALUES (3,19,'Gamma Hall',590,100);
-INSERT INTO Theater (theater_id,company_id,performance_hall,fixed_capacity,balance) VALUES (4,21,'Delta Hall',1200,100);
+INSERT INTO Theater (theater_id,company_id,performence_hall,fixed_capacity,balance) VALUES (1,19,'Alpha Hall',1000,100);
+INSERT INTO Theater (theater_id,company_id,performence_hall,fixed_capacity,balance) VALUES (2,21,'Beta Hall',1500,100);
+INSERT INTO Theater (theater_id,company_id,performence_hall,fixed_capacity,balance) VALUES (3,19,'Gamma Hall',590,100);
+INSERT INTO Theater (theater_id,company_id,performence_hall,fixed_capacity,balance) VALUES (4,21,'Delta Hall',1200,100);
 
 -------------------------------------------------------------
 -- Ajouts de nos hosts par rapport à nos theatre, show prix et dates
