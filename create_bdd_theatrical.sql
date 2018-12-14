@@ -7,7 +7,7 @@
 -- Table: SUPPRESSION des tables déjà existante!
 -- Nous allons créer 10 tables
 -------------------------------------------------------------
-DROP TABLE Networks;
+DROP TABLE Networkss;
 DROP TABLE Company;
 DROP TABLE Produces_cost;
 DROP TABLE Shows;
@@ -26,9 +26,9 @@ DROP TABLE Dates_dates;
 ------------------------------------------------------------
 -- Table: Network
 ------------------------------------------------------------
-CREATE TABLE Networks
+CREATE TABLE Networkss
 (
-    network_id number (10) primary key
+    network_id number(10) primary key
 );
 
 -----------------------------------------------------------
@@ -38,12 +38,12 @@ CREATE TABLE Networks
 CREATE TABLE Company
 (
   -- On identifie la company par un numéro, on aurait pu l'identifier par une lettre "varchar"
-    company_id  number(10) primary key ,
+    company_id  number(10) primary key,
     network_id  number(10),
-    productions varchar2 (50),
-    budget      number (10),
-    room        varchar2 (50),
-    foreign key(network_id) references Networks(network_id)
+    productions varchar(10),
+    budget      number(10),
+    room        varchar(20),
+    foreign key(network_id) references Networkss(network_id)
 );
 
 -------------------------------------------------------------
@@ -76,8 +76,8 @@ CREATE TABLE Theater
 (
     theater_id       number (10) primary key ,
     company_id       number (10),
+    performence_hall varchar (20),
     fixed_capacity   number (10),
-    performence_hall varchar (10),
     balance          number (10),
     foreign key (company_id) references Company(company_id)
 );
@@ -85,14 +85,13 @@ CREATE TABLE Theater
 -------------------------------------------------------------
 -- Table: customers, Le customer possède un identifiant, un nom, un age, un numéro.
 -------------------------------------------------------------
-
-create table Customers
+ CREATE TABLE Customers
 (
-  customer_id    number(10) primary key,
-  customer_name  varchar2(10),
-  customer_age   number(10),
-  customer_phone number(20),
-  custome_status varchar2(10)
+  customers_id    number(10) primary key,
+  customers_name  varchar(20),
+  customers_age   number(10),
+  customers_phone number(20),
+  customers_status varchar(20)
 );
 
 -------------------------------------------------------------
@@ -103,13 +102,14 @@ CREATE TABLE Ticket
 (
     ticket_id              number(10) primary key,
     theater_id             number(10),
-    customer_id            number(10),
+    customers_id            number(10),
     show_id                number(10),
     reduced_reference_rate number(10),
     price                  number(10),
     foreign key (theater_id) references Theater(theater_id),
-    foreign key (customer_id) references Customers(customer_id),
+    foreign key (customers_id) references Customers(customers_id),
     foreign key (show_id) references Shows(show_id)
+    foreign key (seat_number) references Performance_seat(seat_number-
 );
 
 -------------------------------------------------------------
@@ -132,8 +132,8 @@ CREATE TABLE Representation
     ticket_id           number(10),
     show_id             number(10),
     representation_cost number(10),
-    dates               number(10),
     travel_cost        number(10),
+    dates               number(10),
     --- les représentations sont liés à différents élements
     foreign key (ticket_id) references Ticket(ticket_id),
     foreign key (show_id) references Shows(show_id),
@@ -150,7 +150,7 @@ CREATE TABLE Grants
 (
     grant_id   number(10) primary key,
     theater_id number(10),
-    agency     number(10),
+    agency     number(30),
     amount     number(10),
     duration   number(10),
     foreign key(theater_id) references Theater(theater_id)
@@ -160,12 +160,12 @@ CREATE TABLE Grants
 -------------------------------------------------------------
 -- Table: Host
 -------------------------------------------------------------
-
 CREATE TABLE Hosts
 (
-    theater_id   number (10),
-    show_id      number (10),
-    global_price number (10),
+    host_id number(10),
+    theater_id   number(10),
+    show_id      number(10),
+    global_price number(10),
         -- comme donnée dans l'énoncé on définis la date comme un "int"
     dates        number(10),
         -- on défini nos clés étrangères en relation avec nos théatres et nos shows
@@ -177,11 +177,11 @@ CREATE TABLE Hosts
 -------------------------------------------------------------
 -- Table: All performance seats, table supplémentaire
 -------------------------------------------------------------
-create table Performance_seat
+CREATE TABLE Performance_seat
 (
-  Performance_seat number(10) primary key,
+  Performance_seat_id number(10) primary key,
   theater_id       number(10),
-  row_number       number(10),
+  row_numbers       number(10),
   seat_number      number(10),
   dates            number(10),
   ticket_id        number(10),
