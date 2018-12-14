@@ -80,9 +80,9 @@ INSERT INTO Customers (customers_id, customers_name, customers_age, customers_ph
 ---- Nous allons créer un ticket en fonction du theatre, le show, le type de référence (avantage ... ) et le prix final.
 --------------------------------------------------------------
 
-INSERT INTO Ticket (ticket_id, theater_id, customers_id, show_id, reduced_reference_rate, price) VALUES (1,1,1,21,'firstref',110);
-INSERT INTO Ticket (ticket_id, theater_id, customers_id, show_id, reduced_reference_rate, price) VALUES (2,2,2,23,'secondref',100);
-INSERT INTO Ticket (ticket_id, theater_id, customers_id, show_id, reduced_reference_rate, price) VALUES (3,3,3,21,'thirdref',90);
+INSERT INTO Ticket (ticket_id, theater_id, customers_id, show_id, reduced_reference_rate, price) VALUES (1,1,1,21,'student',110);
+INSERT INTO Ticket (ticket_id, theater_id, customers_id, show_id, reduced_reference_rate, price) VALUES (2,2,2,23,'student',100);
+INSERT INTO Ticket (ticket_id, theater_id, customers_id, show_id, reduced_reference_rate, price) VALUES (3,3,3,21,'student',90);
 
 --------------------------------------------------------------
 --- Grant management
