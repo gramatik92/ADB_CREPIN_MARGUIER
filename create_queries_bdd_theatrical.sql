@@ -37,16 +37,15 @@ SELECT * from Hosts;
 SELECT * from Customers;
 
 -- Attributes of company table --
-DESC Network;
+DESC Networkss;
 
--- Select les donnateurs qui donne 100000 aux theatres.
-SELECT *
-FROM Grants g
-WHERE g.amount>=100000;
+-- Selectionner les productions qui ont un budget supérieur à 10000€
+Select Productions from COMPANY
+Where budget > 10000;
 
 -- Selectionner tous les hall qui ont comme nom : delta hall;
-SELECT performance_hall
+SELECT performence_hall
 FROM Theater
-WHERE performance_hall = 'Delta Hall';
+WHERE performence_hall = 'Delta Hall';
 
 -- Toutes nos requêtes fonctionnes.
