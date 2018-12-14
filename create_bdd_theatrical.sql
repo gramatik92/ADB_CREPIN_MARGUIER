@@ -5,7 +5,7 @@
 
 -------------------------------------------------------------
 -- Table: SUPPRESSION des tables déjà existante!
--- Nous allons créer 10 tables
+-- Nous allons créer 11 tables
 -------------------------------------------------------------
 DROP TABLE Networkss;
 DROP TABLE Company;
