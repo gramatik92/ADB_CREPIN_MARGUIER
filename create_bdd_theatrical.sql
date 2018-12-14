@@ -28,7 +28,7 @@ DROP TABLE Dates_dates;
 ------------------------------------------------------------
 CREATE TABLE Networkss
 (
-    network_id number(10) primary key
+    network_id NUMBER(10) primary key
 );
 
 -----------------------------------------------------------
@@ -38,11 +38,11 @@ CREATE TABLE Networkss
 CREATE TABLE Company
 (
   -- On identifie la company par un numéro, on aurait pu l'identifier par une lettre "varchar"
-    company_id  number(10) primary key,
-    network_id  number(10),
-    productions varchar(10),
-    budget      number(10),
-    room        varchar(20),
+    company_id  NUMBER(10) primary key,
+    network_id  NUMBER(10),
+    productions VARCHAR(10),
+    budget      NUMBER(10),
+    room        VARCHAR(20),
     foreign key(network_id) references Networkss(network_id)
 );
 
@@ -51,7 +51,7 @@ CREATE TABLE Company
 -------------------------------------------------------------
 CREATE TABLE Shows
 (
-    show_id number(10) primary key
+    show_id NUMBER(10) primary key
 );
 
 -------------------------------------------------------------
@@ -60,9 +60,9 @@ CREATE TABLE Shows
 
 CREATE TABLE Produces_cost
 (
-    company_id      number (10),
-    show_id         number (10),
-    production_cost number (10),
+    company_id      NUMBER (10),
+    show_id         NUMBER (10),
+    production_cost NUMBER (10),
     foreign key(company_id) REFERENCES Company(company_id),
     foreign key(show_id) references Shows(show_id)
 );
@@ -71,27 +71,26 @@ CREATE TABLE Produces_cost
 -- Table: Theater
 -------------------------------------------------------------
   -- On aurait pu identifier nos théatres avec des lettres mais pour etre plus simple on utilise des chiffres
-
 CREATE TABLE Theater
 (
-    theater_id       number (10) primary key ,
-    company_id       number (10),
-    performence_hall varchar (20),
-    fixed_capacity   number (10),
-    balance          number (10),
+    theater_id       NUMBER (10) primary key ,
+    company_id       NUMBER (10),
+    performance_hall VARCHAR (30),
+    fixed_capacity   NUMBER (20),
+    balance          NUMBER (20),
     foreign key (company_id) references Company(company_id)
 );
 
 -------------------------------------------------------------
 -- Table: customers, Le customer possède un identifiant, un nom, un age, un numéro.
 -------------------------------------------------------------
- CREATE TABLE Customers
+CREATE TABLE Customers
 (
-  customers_id    number(10) primary key,
-  customers_name  varchar(20),
-  customers_age   number(10),
-  customers_phone number(20),
-  customers_status varchar(20)
+  customers_id    NUMBER(10) primary key,
+  customers_name  VARCHAR(20),
+  customers_age   NUMBER(10),
+  customers_phone NUMBER(20),
+  customers_status VARCHAR(20)
 );
 
 -------------------------------------------------------------
@@ -100,16 +99,15 @@ CREATE TABLE Theater
 
 CREATE TABLE Ticket
 (
-    ticket_id              number(10) primary key,
-    theater_id             number(10),
-    customers_id            number(10),
-    show_id                number(10),
-    reduced_reference_rate number(10),
-    price                  number(10),
+    ticket_id              NUMBER(10) primary key,
+    theater_id             NUMBER(10),
+    customers_id            NUMBER(10),
+    show_id                NUMBER(10),
+    reduced_reference_rate NUMBER(10),
+    price                  NUMBER(10),
     foreign key (theater_id) references Theater(theater_id),
     foreign key (customers_id) references Customers(customers_id),
     foreign key (show_id) references Shows(show_id)
-    foreign key (seat_number) references Performance_seat(seat_number-
 );
 
 -------------------------------------------------------------
@@ -118,7 +116,7 @@ CREATE TABLE Ticket
 
 CREATE TABLE Dates_dates
 (
-    dates number(10) primary key
+    dates NUMBER(10) primary key
 );
 
 -------------------------------------------------------------
@@ -128,12 +126,12 @@ CREATE TABLE Dates_dates
 
 CREATE TABLE Representation
 (
-    theater_id          number(10),
-    ticket_id           number(10),
-    show_id             number(10),
-    representation_cost number(10),
-    travel_cost        number(10),
-    dates               number(10),
+    theater_id          NUMBER(10),
+    ticket_id           NUMBER(10),
+    show_id             NUMBER(10),
+    representation_cost NUMBER(10),
+    travel_cost        NUMBER(10),
+    dates               NUMBER(10),
     --- les représentations sont liés à différents élements
     foreign key (ticket_id) references Ticket(ticket_id),
     foreign key (show_id) references Shows(show_id),
@@ -148,11 +146,11 @@ CREATE TABLE Representation
 
 CREATE TABLE Grants
 (
-    grant_id   number(10) primary key,
-    theater_id number(10),
-    agency     number(30),
-    amount     number(10),
-    duration   number(10),
+    grant_id   NUMBER(10) primary key,
+    theater_id NUMBER(10),
+    agency     NUMBER(30),
+    amount     NUMBER(10),
+    durations   NUMBER(10),
     foreign key(theater_id) references Theater(theater_id)
 );
 
@@ -162,12 +160,12 @@ CREATE TABLE Grants
 -------------------------------------------------------------
 CREATE TABLE Hosts
 (
-    host_id number(10),
-    theater_id   number(10),
-    show_id      number(10),
-    global_price number(10),
+    host_id NUMBER(10),
+    theater_id   NUMBER(10),
+    show_id      NUMBER(10),
+    global_price NUMBER(10),
         -- comme donnée dans l'énoncé on définis la date comme un "int"
-    dates        number(10),
+    dates        NUMBER(10),
         -- on défini nos clés étrangères en relation avec nos théatres et nos shows
     foreign key (theater_id) references Theater(theater_id),
     foreign key (show_id) references Shows(show_id),
@@ -179,12 +177,12 @@ CREATE TABLE Hosts
 -------------------------------------------------------------
 CREATE TABLE Performance_seat
 (
-  Performance_seat_id number(10) primary key,
-  theater_id       number(10),
-  row_numbers       number(10),
-  seat_number      number(10),
-  dates            number(10),
-  ticket_id        number(10),
+  Performance_seat_id NUMBER(10) primary key,
+  theater_id       NUMBER(10),
+  row_numbers       NUMBER(10),
+  seat_number      NUMBER(10),
+  dates            NUMBER(10),
+  ticket_id        NUMBER(10),
   foreign key (dates) references Dates_dates(dates),
   foreign key (ticket_id) references Ticket(ticket_id),
   foreign key (theater_id) references Theater(theater_id)
