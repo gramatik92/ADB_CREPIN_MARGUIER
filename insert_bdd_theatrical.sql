@@ -62,10 +62,10 @@ INSERT INTO Theater (theater_id,company_id,performence_hall,fixed_capacity,balan
 -------------------------------------------------------------
 -- Ajouts de nos hosts par rapport à nos theatre, show prix et dates
 -------------------------------------------------------------
-INSERT INTO Hosts (theater_id, show_id, global_price, dates) VALUES (1,21,150,1);
-INSERT INTO Hosts (theater_id, show_id, global_price, dates) VALUES (2,23,155,2);
-INSERT INTO Hosts (theater_id, show_id, global_price, dates) VALUES (3,21,100,3);
-INSERT INTO Hosts (theater_id, show_id, global_price, dates) VALUES (3,23,180,4);
+INSERT INTO Hosts (host_id, theater_id, show_id, global_price, dates) VALUES (1,1,21,150,1);
+INSERT INTO Hosts (host_id, theater_id, show_id, global_price, dates) VALUES (2,2,23,155,2);
+INSERT INTO Hosts (host_id, theater_id, show_id, global_price, dates) VALUES (3,3,21,100,3);
+INSERT INTO Hosts (host_id, theater_id, show_id, global_price, dates) VALUES (4,3,23,180,4);
 
 --------------------------------------------------------------
 -- Par la suite nous allons aborder la table des customers(clients)

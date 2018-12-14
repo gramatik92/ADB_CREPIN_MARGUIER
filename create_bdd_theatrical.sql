@@ -161,7 +161,7 @@ CREATE TABLE Grants
 -------------------------------------------------------------
 CREATE TABLE Hosts
 (
-    host_id NUMBER(10),
+    host_id NUMBER(10) primary key,
     theater_id   NUMBER(10),
     show_id      NUMBER(10),
     global_price NUMBER(10),
