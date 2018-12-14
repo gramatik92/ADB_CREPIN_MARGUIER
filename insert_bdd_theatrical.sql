@@ -100,9 +100,9 @@ INSERT INTO Grants (grant_id, theater_id, agency, amount, durations) VALUES (4,2
 -- Par la suite nous allons aborder la table des représentations
 --------------------------------------------------------------
 
-INSERT INTO Representation (theater_id, ticket_id, show_id, representation_cost, travel_cost, dates) VALUES (1,1,21,150,100, 1);
-INSERT INTO Representation (theater_id, ticket_id, show_id, representation_cost, travel_cost, dates) VALUES (2,2,23,150,100, 2);
-INSERT INTO Representation (theater_id, ticket_id, show_id, representation_cost, travel_cost, dates) VALUES (3,3,23,150,100, 3);
+INSERT INTO Representation (representation_id, theater_id, ticket_id, show_id, representation_cost, travel_cost, dates) VALUES (1,1,1,21,150,100, 1);
+INSERT INTO Representation (representation_id, theater_id, ticket_id, show_id, representation_cost, travel_cost, dates) VALUES (2,2,2,23,150,100, 2);
+INSERT INTO Representation (representation_id, theater_id, ticket_id, show_id, representation_cost, travel_cost, dates) VALUES (3,3,3,23,150,100, 3);
 
 --------------------------------------------------------------
 -- Tables des sieges en fonction des tickets.

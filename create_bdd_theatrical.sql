@@ -126,6 +126,7 @@ CREATE TABLE Dates_dates
 
 CREATE TABLE Representation
 (
+    representation_id   NUMBER(10) primary key,
     theater_id          NUMBER(10),
     ticket_id           NUMBER(10),
     show_id             NUMBER(10),
