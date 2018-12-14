@@ -27,7 +27,7 @@ begin
     SELECT t.reduced_reference_rate FROM Ticket t
     if ((:t.reduced_reference_rate!='children') or  (:t.reduced_reference_rate!='students') or (:t.reduced_reference_rate!='unemployed') or (:new.reduced_reference_rate!='elderly')) then
 -- permet de générer une ligne entière dans le tampon. Un caractère fin de ligne est automatiquement ajouté en fin de ligne
-        t.price = t.price-(1*20/100);
+        t.price = t.price-(1*20/100)*t.price;
         dbms_output.put_line('Price reducted');
     end if;
 end;
