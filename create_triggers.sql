@@ -59,3 +59,19 @@ FOR EACH ROW
 BEGIN
     UPDATE Company c set c.budget = c.budget-:new.production_cost where c.company_id=:new.company_id;
 END;
+
+
+CREATE TRIGGER TestTrigger
+AFTER UPDATE OR INSERT
+ON Shows
+FOR EACH ROW
+DECLARE
+Test1 NUMBER;
+TheatreID NUMBER;
+BEGIN
+IF(:NEW.show_id != :NEW.performence_hall) THEN
+  SELECT sold, id_company INTO Test1, TheatreID
+  FROM TheaterCompany t
+WHERE :NEW.id_show = t.id_company;
+  END IF;
+END;
