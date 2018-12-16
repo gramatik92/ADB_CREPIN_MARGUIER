@@ -21,10 +21,10 @@ DROP TABLE Performance_seat;
 DROP TABLE Dates_dates;
 
 ------------------------------------------------------------
---       Création des tables de la bd theatrical
--- Dans un premier temps, nous avons utilisé du mysql et nous avons adaté notre code en PLsql
+--       Création des tables de la bdd theatrical
+-- Dans un premier temps, nous avons utilisé du mysql et nous avons adapter notre code en PL/sql
 ------------------------------------------------------------
--- Table: Network
+-- Table: Networkss
 ------------------------------------------------------------
 CREATE TABLE Networkss
 (
@@ -41,6 +41,7 @@ CREATE TABLE Company
     company_id  NUMBER(10) primary key,
     network_id  NUMBER(10),
     productions VARCHAR(10),
+    --- nom de la production
     budget      NUMBER(10),
     room        VARCHAR(20),
     foreign key(network_id) references Networkss(network_id)
@@ -48,6 +49,7 @@ CREATE TABLE Company
 
 -------------------------------------------------------------
 -- Table: Shows
+-- numéro du show
 -------------------------------------------------------------
 CREATE TABLE Shows
 (
@@ -96,7 +98,7 @@ CREATE TABLE Customers
 -------------------------------------------------------------
 -- Table: Ticket
 -------------------------------------------------------------
-
+-- un ticket regroupe plusieurs informations
 CREATE TABLE Ticket
 (
     ticket_id              NUMBER(10) primary key,
