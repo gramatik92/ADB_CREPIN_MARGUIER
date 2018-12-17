@@ -1,10 +1,11 @@
 -----------------------------------------------------------
 --        Script - Advanced Database
 --  Made by Paul William CREPIN and Timothée Marguier
+-- fichier : create_triggers.sql
 -------------------------------------------------------------
 DROP TRIGGER Capacity_space;
 DROP TRIGGER discount_add;
-DROP TRIGGER Showcosts; 
+DROP TRIGGER Showcosts;
 DROP TRIGGER budget_production_costs;
 
 -------------------------------------------------------------

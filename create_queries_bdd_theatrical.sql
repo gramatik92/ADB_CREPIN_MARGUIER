@@ -1,6 +1,7 @@
 -----------------------------------------------------------
 --        Script - Advanced Database
 --  Made by Paul William CREPIN and Timothée Marguier
+-- fichier : create_queries_bdd_theatrical.sql
 -------------------------------------------------------------
 
 -------------------------------------------------------------
