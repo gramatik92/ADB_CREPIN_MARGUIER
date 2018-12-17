@@ -2,9 +2,9 @@
 --        Script - Advanced Database
 --  Made by Paul William CREPIN and Timothée Marguier
 -------------------------------------------------------------
-DROP TRIGGER Capacity_space; ok
-DROP TRIGGER discount_add; ok
-DROP TRIGGER Showcosts; ok
+DROP TRIGGER Capacity_space;
+DROP TRIGGER discount_add;
+DROP TRIGGER Showcosts; 
 DROP TRIGGER budget_production_costs;
 
 -------------------------------------------------------------
