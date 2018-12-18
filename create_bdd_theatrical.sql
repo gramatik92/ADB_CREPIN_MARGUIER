@@ -10,7 +10,7 @@
 -------------------------------------------------------------
 DROP TABLE Networkss;
 DROP TABLE Company;
-DROP TABLE Produces_cost;
+DROP TABLE Produces_cost;    
 DROP TABLE Shows;
 DROP TABLE Theater;
 DROP TABLE Ticket;
